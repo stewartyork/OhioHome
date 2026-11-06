@@ -31,6 +31,29 @@ images/           Put your photos here
 3. **Add photos.** Put images in `images/`. Replace each `<div class="ph">…</div>` in the gallery with `<img src="images/your-photo.jpg" alt="…">`. Set the hero photo in `css/styles.css` (look for the `.hero` comment).
 4. **Review the restaurants and parks.** They live in the `RESTAURANTS` and `PARKS` arrays at the top of `js/main.js`. Hours change with the seasons, so confirm the list before launch.
 
+## HTTPS
+
+The site is already set up to run only over HTTPS:
+
+- Every external resource (fonts, Google Maps, FormSubmit) loads over `https://`.
+- Both pages send `http://` visitors to `https://` (local previews on `localhost` are skipped). They also include `upgrade-insecure-requests`, which tells browsers to load any stray `http://` resources over `https://`.
+- `_headers`, `netlify.toml` and `.htaccess` turn on the HTTPS redirect and security headers on hosts that support them. GitHub Pages ignores these files.
+
+The certificate comes from your host. Pick the steps for yours.
+
+**GitHub Pages**
+1. Go to the repo's **Settings → Pages**, set the source to the `main` branch at `/ (root)`, and save.
+2. *(Custom domain)* Enter your domain under **Custom domain**. At your DNS provider, add:
+   - for an apex domain like `example.com`: `A` records pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153` and `185.199.111.153`
+   - for `www`: a `CNAME` record pointing to `<username>.github.io`
+3. When the certificate is ready (this can take up to an hour), check **Enforce HTTPS**.
+
+**Netlify / Cloudflare Pages**: import the repo. They issue the certificate and redirect to HTTPS automatically. `_headers` adds HSTS and the other security headers.
+
+**Apache shared hosting**: turn on the host's free Let's Encrypt (AutoSSL) certificate. `.htaccess` then forces HTTPS and adds the headers.
+
+> Once the site runs on its final HTTPS domain, send a test request from the live form to confirm that email arrives. If FormSubmit asks you to activate again, click the link it sends.
+
 ## Preview locally
 
 ```bash

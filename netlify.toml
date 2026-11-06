@@ -1,0 +1,7 @@
+# Netlify provisions a free Let's Encrypt certificate and redirects HTTP -> HTTPS automatically.
+# This rule also sends the bare Netlify subdomain over HTTPS if reached via http.
+[[redirects]]
+  from = "http://*"
+  to = "https://:splat"
+  status = 301
+  force = true
