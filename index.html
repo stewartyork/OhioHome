@@ -3,6 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <script>
+    // Send visitors to the HTTPS version (skipped for local previews).
+    if (location.protocol === 'http:' && !/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) {
+      location.replace('https://' + location.host + location.pathname + location.search + location.hash);
+    }
+  </script>
   <title>Hocking Hills Retreat | Short-Term Rental in Logan, Ohio</title>
   <meta name="description" content="A private short-term rental home in Logan, Ohio, minutes from Hocking Hills State Park. See home features, local restaurants, park directions, and request your stay." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
