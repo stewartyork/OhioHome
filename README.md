@@ -26,7 +26,7 @@ images/           Put your photos here
 
 ## Setup checklist
 
-1. **Turn on email requests.** In `index.html`, replace `YOUR_EMAIL@example.com` in the form's `action` with the inbox that should receive requests. The first time someone submits the form, FormSubmit emails that inbox an activation link. Click it once and requests will arrive from then on. (FormSubmit also lets you use a random alias in place of your real address so the address isn't visible in the page source.)
+1. **Turn on email requests.** In `index.html`, replaced with `admin@theoldplaceinthehills.com` in the form's `action` with the inbox that should receive requests. The first time someone submits the form, FormSubmit emails that inbox an activation link. Click it once and requests will arrive from then on. (FormSubmit also lets you use a random alias in place of your real address so the address isn't visible in the page source.)
 2. **Update home details.** Edit the quick facts (bedrooms, baths, guests), the amenity lists and the house rules in `index.html`.
 3. **Add photos.** Put images in `images/`. Replace each `<div class="ph">…</div>` in the gallery with `<img src="images/your-photo.jpg" alt="…">`. Set the hero photo in `css/styles.css` (look for the `.hero` comment).
 4. **Review the restaurants and parks.** They live in the `RESTAURANTS` and `PARKS` arrays at the top of `js/main.js`. Hours change with the seasons, so confirm the list before launch.
